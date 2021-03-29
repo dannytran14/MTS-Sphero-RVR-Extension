@@ -100,14 +100,14 @@ namespace MTS_Sphero_RVR {
      * TODO: describe your function here
      */
     //% block
-    export function Husky_Locate () {
+    export function Husky_Locate () : boolean {
         let position: number;
         huskylens.request();
         position = huskylens.readeBox_index(1, 1, Content1.xCenter);
         if (position == -1) {
-            return 0
+            return false
         } else {
-            return 1
+            return true
         }
     }
     /**
