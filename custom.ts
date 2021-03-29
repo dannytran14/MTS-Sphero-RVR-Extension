@@ -27,6 +27,8 @@ namespace MTS_Sphero_RVR {
     /**
      * TODO: describe your function here
      */
+    //% group="MTS_HuskyLens"
+    //% blockGap=8
     //% block
     export function Husky_Centre(): void {
         let position : number;
@@ -46,6 +48,8 @@ namespace MTS_Sphero_RVR {
     /**
      * TODO: describe your function here
      */
+    //% group="MTS_Sonar"
+    //% blockGap=8
     //% block
     export function Sonar_Pick_Up(): boolean {
         if (grove.measureInCentimeters(DigitalPin.P1) <= 8) {
@@ -58,6 +62,8 @@ namespace MTS_Sphero_RVR {
      * TODO: describe your function here
      */
     //% block
+    //% group="MTS_Gripper"
+    //% blockGap=8
     export function Close_Gripper(): void {
         servos.P0.setAngle(180);
     }
@@ -65,6 +71,8 @@ namespace MTS_Sphero_RVR {
     /**
      * TODO: describe your function here
      */
+    //% group="MTS_Movement"
+    //% blockGap=8
     //% block
     export function Move_Fast(): void {
         sphero.drive(40, 0)
@@ -74,6 +82,8 @@ namespace MTS_Sphero_RVR {
     /**
      * TODO: describe your function here
      */
+    //% group="MTS_Arm_Control"
+    //% blockGap=8
     //% block
     export function Move_Arm_Out(): void {
         servos.P1.setAngle(90)
@@ -90,6 +100,8 @@ namespace MTS_Sphero_RVR {
     /**
      * TODO: describe your function here
      */
+    //% group="MTS_Movement"
+    //% blockGap=8
     //% block
     export function Move_Slow () {
         sphero.drive(10, 0)
@@ -100,6 +112,8 @@ namespace MTS_Sphero_RVR {
      * TODO: describe your function here
      */
     //% block
+    //% group="MTS_HuskyLens"
+    //% blockGap=8
     export function Husky_Locate () : boolean {
         let position: number;
         huskylens.request();
@@ -114,6 +128,8 @@ namespace MTS_Sphero_RVR {
      * TODO: describe your function here
      */
     //% block
+    //% group="MTS_Sonar"
+    //% blockGap=8
     export function Sonar_Activate (): boolean {
     if (grove.measureInCentimeters(DigitalPin.P1) < 25) {
         return true
@@ -123,6 +139,8 @@ namespace MTS_Sphero_RVR {
     /**
      * TODO: describe your function here
      */
+    //% group="MTS_Arm_Control"
+    //% blockGap=8
     //% block
     export function Open_Gripper () {
         servos.P0.setAngle(0)
@@ -131,6 +149,8 @@ namespace MTS_Sphero_RVR {
     /**
      * TODO: describe your function here
      */
+    //% group="MTS_Movement"
+    //% blockGap=8
     //% block
     export function Rotate () {
         sphero.resetYaw()
