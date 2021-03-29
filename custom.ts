@@ -23,8 +23,8 @@ namespace MTS_Sphero_Rover {
      * @param e describe parameter here
      */
     //% block
-    export function foo(n: number, s: string, e: MyEnum): void {
-        // Add code here
+    export function Move_Arm_In(): void {
+        servos.P1.setAngle(0)
     }
 
     /**
