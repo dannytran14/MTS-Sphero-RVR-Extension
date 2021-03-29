@@ -19,6 +19,8 @@ namespace MTS_Sphero_RVR {
     /**
      * TODO: describe your function here
      */
+    //% group="MTS_Arm_Control"
+    //% blockGap=8
     //% block
     export function Move_Arm_In(): void {
         servos.P1.setAngle(0);
@@ -62,7 +64,7 @@ namespace MTS_Sphero_RVR {
      * TODO: describe your function here
      */
     //% block
-    //% group="MTS_Gripper"
+    //% group="MTS_Arm_Control"
     //% blockGap=8
     export function Close_Gripper(): void {
         servos.P0.setAngle(180);
