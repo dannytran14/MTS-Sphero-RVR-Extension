@@ -15,7 +15,7 @@ enum MyEnum {
  * Custom blocks
  */
 //% weight=100 color=#000000 icon=""
-namespace MTS_Sphero_Rover {
+namespace MTS_Sphero_RVR {
     /**
      * TODO: describe your function here
      */
@@ -47,6 +47,115 @@ namespace MTS_Sphero_Rover {
      * TODO: describe your function here
      */
     //% block
-    export function Sonar_Pick_Up(): void {
+    export function Sonar_Pick_Up(): boolean {
+        if (grove.measureInCentimeters(DigitalPin.P1) <= 8) {
+        return true;
     }
+    return false;
+    }
+
+    /**
+     * TODO: describe your function here
+     */
+    //% block
+    export function Close_Gripper(): void {
+        servos.P0.setAngle(180);
+    }
+
+    /**
+     * TODO: describe your function here
+     */
+    //% block
+    export function Move_Fast(): void {
+        sphero.drive(40, 0)
+        basic.pause(100)
+    }
+
+    /**
+     * TODO: describe your function here
+     */
+    //% block
+    export function Move_Arm_Out(): void {
+        servos.P1.setAngle(90)
+    }
+
+    /**
+     * TODO: describe your function here
+     */
+    //% block
+    export function Initialise(): void {
+        huskylens.initI2c()
+        huskylens.initMode(protocolAlgorithm.ALGORITHM_OBJECT_TRACKING)
+    }
+    /**
+     * TODO: describe your function here
+     */
+    //% block
+    export function Move_Slow () {
+        sphero.drive(10, 0)
+        basic.pause(100)
+    }
+
+    /**
+     * TODO: describe your function here
+     */
+    //% block
+    export function Husky_Locate () {
+        let position: number;
+        huskylens.request();
+        position = huskylens.readeBox_index(1, 1, Content1.xCenter);
+        if (position == -1) {
+            return 0
+        } else {
+            return 1
+        }
+    }
+    /**
+     * TODO: describe your function here
+     */
+    //% block
+    export function Sonar_Activate (): boolean {
+    if (grove.measureInCentimeters(DigitalPin.P1) < 25) {
+        return true
+    }
+    return false
+    }
+    /**
+     * TODO: describe your function here
+     */
+    //% block
+    export function Open_Gripper () {
+        servos.P0.setAngle(0)
+    }
+
+    /**
+     * TODO: describe your function here
+     */
+    //% block
+    export function Rotate () {
+        sphero.resetYaw()
+        sphero.drive(0, 40)
+        basic.pause(100)
+    }
+    /**
+     * TODO: describe your function here
+     */
+    //% block
+
+    /**
+     * TODO: describe your function here
+     */
+    //% block
+    
+    /**
+     * TODO: describe your function here
+     */
+    //% block
+    
+    /**
+     * TODO: describe your function here
+     */
+    //% block
 }
+
+
