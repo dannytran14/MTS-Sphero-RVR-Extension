@@ -1,5 +1,5 @@
 
-> Open this page at [https://dannytran14.github.io/steps-for-learning-sphero-rvr/](https://dannytran14.github.io/steps-for-learning-sphero-rvr/)
+> Open this page at [https://github.com/dannytran14/MTS-Sphero-RVR-Extension](https://dannytran14.github.io/steps-for-learning-sphero-rvr/)
 
 ## Use as Extension
 
