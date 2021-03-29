@@ -1,5 +1,5 @@
 {
-    "name": "Steps for Learning Sphero RVR",
+    "name": "MTS_Sphero_RVR",
     "description": "",
     "dependencies": {
         "core": "*",
@@ -22,5 +22,5 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "tsprj"
+    "preferredEditor": "blocksprj"
 }
