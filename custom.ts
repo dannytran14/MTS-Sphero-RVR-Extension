@@ -14,25 +14,39 @@ enum MyEnum {
 /**
  * Custom blocks
  */
-//% weight=100 color=#0fbc11 icon=""
+//% weight=100 color=#000000 icon=""
 namespace MTS_Sphero_Rover {
     /**
      * TODO: describe your function here
-     * @param n describe parameter here, eg: 5
-     * @param s describe parameter here, eg: "Hello"
-     * @param e describe parameter here
      */
     //% block
     export function Move_Arm_In(): void {
-        servos.P1.setAngle(0)
+        servos.P1.setAngle(0);
     }
 
     /**
      * TODO: describe your function here
-     * @param value describe value here, eg: 5
      */
     //% block
-    export function fib(value: number): number {
-        return value <= 1 ? value : fib(value -1) + fib(value - 2);
+    export function Husky_Centre(): void {
+        let position : number;
+        while (position < 140 || position > 180) {
+            huskylens.request();
+            position = huskylens.readeBox_index(1, 1, Content1.xCenter);
+            sphero.resetYaw();
+            if (position > 180) {
+                sphero.drive(0, 25);
+            } else {
+                sphero.drive(0, -25);
+            }
+            basic.pause(300);
+        }
+    }
+
+    /**
+     * TODO: describe your function here
+     */
+    //% block
+    export function Sonar_Pick_Up(): void {
     }
 }
