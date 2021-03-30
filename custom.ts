@@ -16,15 +16,7 @@ enum MyEnum {
  */
 //% weight=100 color=#000000 icon=""
 namespace MTS_Sphero_RVR {
-    /**
-     * TODO: describe your function here
-     */
-    //% group="MTS_Arm_Control"
-    //% blockGap=8
-    //% block
-    export function Move_Arm_In(): void {
-        servos.P1.setAngle(0);
-    }
+
 
     /**
      * TODO: describe your function here
@@ -37,6 +29,16 @@ namespace MTS_Sphero_RVR {
             Rotate();
         }
         Husky_Centre();
+    }
+
+    /**
+     * TODO: describe your function here
+     */
+    //% group="MTS_Arm_Control"
+    //% blockGap=8
+    //% block
+    export function Move_Arm_In(): void {
+        servos.P1.setAngle(0);
     }
 
     /**
@@ -55,6 +57,30 @@ namespace MTS_Sphero_RVR {
         }
 
     }
+
+    /**
+     * TODO: describe your function here
+     */
+    //% group="Simplified Functions"
+    //% blockGap=8
+    //% block
+    export function Pick_Up_Object(): void {
+        Close_Gripper()
+    }
+
+    /**
+     * TODO: describe your function here
+     */
+    //% group="Simplified Functions"
+    //% blockGap=8
+    //% block
+    export function Drop_Object(): void {
+        Open_Gripper()
+    }
+
+
+
+
     /**
      * TODO: describe your function here
      */
