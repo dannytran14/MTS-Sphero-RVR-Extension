@@ -29,6 +29,45 @@ namespace MTS_Sphero_RVR {
     /**
      * TODO: describe your function here
      */
+    //% group="Simplified Functions"
+    //% blockGap=8
+    //% block
+    export function Find_Object(): void {
+        while(!Husky_Locate()){
+            Rotate();
+        }
+        Husky_Centre();
+    }
+
+    /**
+     * TODO: describe your function here
+     */
+    //% group="Simplified Functions"
+    //% blockGap=8
+    //% block
+    export function Move_To_Object(): void {
+        Open_Gripper();
+        while(!Sonar_Activate()){
+            Move_Fast();
+        }
+        while(!Sonar_Pick_Up()){
+            Move_Slow();
+        }
+
+    }
+    /**
+     * TODO: describe your function here
+     */
+    //% group="Simplified Functions"
+    //% blockGap=8
+    //% block
+    export function Return_Home(): void {
+        sphero.resetYaw()
+        sphero.drive(40, 180)
+    }
+    /**
+     * TODO: describe your function here
+     */
     //% group="MTS_HuskyLens"
     //% blockGap=8
     //% block
