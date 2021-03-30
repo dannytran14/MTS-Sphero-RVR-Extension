@@ -19,7 +19,7 @@ namespace MTS_Sphero_RVR {
 
 
     /**
-     * TODO: describe your function here
+     * The RVR will rotate until the HuskyLens recognises the object on its screen.
      */
     //% group="Simplified Functions"
     //% blockGap=8
@@ -28,11 +28,11 @@ namespace MTS_Sphero_RVR {
         while(!Husky_Locate()){
             Rotate();
         }
-        Husky_Centre();
+        
     }
 
     /**
-     * TODO: describe your function here
+     * The arm will rotate out from its fold in position, in preparation for picking up an object. 
      */
     //% group="MTS_Arm_Control"
     //% blockGap=8
@@ -42,12 +42,13 @@ namespace MTS_Sphero_RVR {
     }
 
     /**
-     * TODO: describe your function here
+     * The RVR will centre its positioning relate to the object, and move towards it. 
      */
     //% group="Simplified Functions"
     //% blockGap=8
     //% block
     export function Move_To_Object(): void {
+        Husky_Centre();
         Open_Gripper();
         while(!Sonar_Activate()){
             Move_Fast();
@@ -59,7 +60,7 @@ namespace MTS_Sphero_RVR {
     }
 
     /**
-     * TODO: describe your function here
+     * The RVR will pick up the object. 
      */
     //% group="Simplified Functions"
     //% blockGap=8
@@ -69,7 +70,7 @@ namespace MTS_Sphero_RVR {
     }
 
     /**
-     * TODO: describe your function here
+     * The RVR will drop the object. 
      */
     //% group="Simplified Functions"
     //% blockGap=8
@@ -82,7 +83,7 @@ namespace MTS_Sphero_RVR {
 
 
     /**
-     * TODO: describe your function here
+     * The RVR will return back to its starting position. 
      */
     //% group="Simplified Functions"
     //% blockGap=8
@@ -92,7 +93,7 @@ namespace MTS_Sphero_RVR {
         sphero.drive(40, 180)
     }
     /**
-     * TODO: describe your function here
+     * The RVR will rotate until the object is centred on the HuskyLens. 
      */
     //% group="MTS_HuskyLens"
     //% blockGap=8
@@ -113,7 +114,7 @@ namespace MTS_Sphero_RVR {
     }
 
     /**
-     * TODO: describe your function here
+     * Will return a true value once the RVR has reached its pick up distance. 
      */
     //% group="MTS_Sonar"
     //% blockGap=8
@@ -126,7 +127,7 @@ namespace MTS_Sphero_RVR {
     }
 
     /**
-     * TODO: describe your function here
+     * The RVR Gripper will close. 
      */
     //% block
     //% group="MTS_Arm_Control"
@@ -136,7 +137,7 @@ namespace MTS_Sphero_RVR {
     }
 
     /**
-     * TODO: describe your function here
+     * The RVR will perform a fast movement. 
      */
     //% group="MTS_Movement"
     //% blockGap=8
@@ -147,7 +148,7 @@ namespace MTS_Sphero_RVR {
     }
 
     /**
-     * TODO: describe your function here
+     * The RVR will swing the arm out from its folding position. 
      */
     //% group="MTS_Arm_Control"
     //% blockGap=8
@@ -157,7 +158,7 @@ namespace MTS_Sphero_RVR {
     }
 
     /**
-     * TODO: describe your function here
+     * Intialises all values and variables before the program begins. 
      */
     //% block
     export function Initialise(): void {
@@ -165,7 +166,7 @@ namespace MTS_Sphero_RVR {
         huskylens.initMode(protocolAlgorithm.ALGORITHM_OBJECT_TRACKING)
     }
     /**
-     * TODO: describe your function here
+     * The RVR will perform a slow movement. 
      */
     //% group="MTS_Movement"
     //% blockGap=8
@@ -176,7 +177,7 @@ namespace MTS_Sphero_RVR {
     }
 
     /**
-     * TODO: describe your function here
+     * The HuskyLens will return a true value once a object is detected its screen. 
      */
     //% block
     //% group="MTS_HuskyLens"
@@ -192,7 +193,7 @@ namespace MTS_Sphero_RVR {
         }
     }
     /**
-     * TODO: describe your function here
+     * The Sonar will return a true value once it detects that the RVR should slow down. 
      */
     //% block
     //% group="MTS_Sonar"
@@ -204,7 +205,7 @@ namespace MTS_Sphero_RVR {
     return false
     }
     /**
-     * TODO: describe your function here
+     * The RVR Gripper will open. 
      */
     //% group="MTS_Arm_Control"
     //% blockGap=8
@@ -214,7 +215,7 @@ namespace MTS_Sphero_RVR {
     }
 
     /**
-     * TODO: describe your function here
+     * The RVR will perform a small clockwise rotation. 
      */
     //% group="MTS_Movement"
     //% blockGap=8
@@ -224,25 +225,6 @@ namespace MTS_Sphero_RVR {
         sphero.drive(0, 40)
         basic.pause(100)
     }
-    /**
-     * TODO: describe your function here
-     */
-    //% block
-
-    /**
-     * TODO: describe your function here
-     */
-    //% block
-    
-    /**
-     * TODO: describe your function here
-     */
-    //% block
-    
-    /**
-     * TODO: describe your function here
-     */
-    //% block
 }
 
 
