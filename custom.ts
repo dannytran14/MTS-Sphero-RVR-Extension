@@ -152,8 +152,8 @@ namespace MTS_Sphero_RVR {
      */
     //% group="MTS_Movement"
     //% blockGap=8
-    //% heading.min=0 heading.max= 359
     //% block
+    //% heading.min=0 heading.max=359
     export function Move_With_Heading(heading: number): void {
         sphero.drive(40, heading)
     }
