@@ -50,13 +50,12 @@ namespace MTS_Sphero_RVR {
     export function Move_To_Object(): void {
         Husky_Centre();
         Open_Gripper();
-        while(!Sonar_Activate()){
+        while(!Sonar_Object_Detected()){
             Move_Fast();
         }
         while(!Sonar_Pick_Up()){
             Move_Slow();
         }
-
     }
 
     /**
@@ -78,9 +77,6 @@ namespace MTS_Sphero_RVR {
     export function Drop_Object(): void {
         Open_Gripper()
     }
-
-
-
 
     /**
      * The RVR will return back to its starting position. 
@@ -154,8 +150,31 @@ namespace MTS_Sphero_RVR {
     //% blockGap=8
     //% block
     //% heading.min=0 heading.max=359
-    export function Move_With_Heading(heading: number): void {
+    export function Move_Forward_With_Heading(heading: number): void {
         sphero.drive(40, heading)
+    }
+
+    /**
+     * The RVR will move in the heading specified. 
+     */
+    //% group="MTS_Movement"
+    //% blockGap=8
+    //% block
+    //% heading.min=0 heading.max=359
+    export function Move_Backward(): void {
+        sphero.drive(-40, 0)
+    }
+
+
+    /**
+     * The RVR will stop.  
+     */
+    //% group="MTS_Movement"
+    //% blockGap=8
+    //% block
+    //% heading.min=0 heading.max=359
+    export function Stop(): void {
+        sphero.drive(0, 0)
     }
 
     /**
@@ -204,17 +223,31 @@ namespace MTS_Sphero_RVR {
         }
     }
     /**
-     * The Sonar will return a true value once it detects that the RVR should slow down. 
+     * The Sonar will return a true value once it detects that the RVR should slow down once it detects a collision ahead. 
      */
     //% block
     //% group="MTS_Sonar"
     //% blockGap=8
-    export function Sonar_Activate (): boolean {
+    export function Sonar_Collison_Detected (): boolean {
+    if (grove.measureInCentimeters(DigitalPin.P1) < 15) {
+        return true
+    }
+    return false
+    }
+
+    /**
+     * The Sonar will return a true value once it detects that the RVR should slow once it detects an object. 
+     */
+    //% block
+    //% group="MTS_Sonar"
+    //% blockGap=8
+    export function Sonar_Object_Detected (): boolean {
     if (grove.measureInCentimeters(DigitalPin.P1) < 25) {
         return true
     }
     return false
     }
+
     /**
      * The RVR Gripper will open. 
      */
