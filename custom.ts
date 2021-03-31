@@ -148,6 +148,17 @@ namespace MTS_Sphero_RVR {
     }
 
     /**
+     * The RVR will move in the heading specified. 
+     */
+    //% group="MTS_Movement"
+    //% blockGap=8
+    //% heading.min=0 heading.max= 359
+    //% block
+    export function Move_With_Heading(heading: number): void {
+        sphero.drive(40, heading)
+    }
+
+    /**
      * The RVR will swing the arm out from its folding position. 
      */
     //% group="MTS_Arm_Control"
