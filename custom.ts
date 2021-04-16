@@ -10,7 +10,7 @@ enum MyEnum {
     //% block="two"
     Two
 }
-
+let degree: number = 0
 /**
  * Custom blocks
  */
@@ -23,7 +23,7 @@ namespace MTS_Sphero_RVR {
     //% blockGap=8
     //% block
     export function Move_Slow () {
-        sphero.drive(10, 0)
+        sphero.drive(40, 0)
         basic.pause(100)
     }
 
@@ -35,7 +35,7 @@ namespace MTS_Sphero_RVR {
     //% block
     export function Move_Fast(): void {
         sphero.drive(40, 0)
-        basic.pause(100)
+        basic.pause(2000)
     }
 
     /**
@@ -46,7 +46,15 @@ namespace MTS_Sphero_RVR {
     //% block
     //% heading.min=0 heading.max=359
     export function Move_Forward_With_Heading(heading: number): void {
-        sphero.drive(40, heading)
+        degree += heading
+        if (degree > 359){
+            degree -= 360
+        }
+        else if (degree < 0){
+            degree += 360
+        }
+        sphero.drive(40, degree)
+        basic.pause(2000)
     }
 
     /**
@@ -58,6 +66,7 @@ namespace MTS_Sphero_RVR {
     //% heading.min=0 heading.max=359
     export function Move_Backward(): void {
         sphero.drive(-40, 0)
+        basic.pause(2000)
     }
 
     /**
