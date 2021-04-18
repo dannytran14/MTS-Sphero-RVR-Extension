@@ -22,7 +22,7 @@ namespace MTS_RVR {
     //% group="MTS_Movement_Only"
     //% blockGap=8
     //% block
-    export function Move_Forward_Slow () {
+    export function Move_Forward_Slow_2000 () {
         sphero.drive(40, 0)
         basic.pause(2000)
     }
@@ -33,7 +33,7 @@ namespace MTS_RVR {
     //% group="MTS_Movement_Only"
     //% blockGap=8
     //% block
-    export function Move_Forward_Fast(): void {
+    export function Move_Forward_Fast_2000 (): void {
         sphero.drive(40, 0)
         basic.pause(2000)
     }
@@ -43,7 +43,7 @@ namespace MTS_RVR {
     //% group="MTS_Movement"
     //% blockGap=8
     //% block
-    export function Move_Slow () {
+    export function Move_Forward_Slow_100() {
         sphero.drive(40, 0)
         basic.pause(100)
     }
@@ -54,9 +54,9 @@ namespace MTS_RVR {
     //% group="MTS_Movement"
     //% blockGap=8
     //% block
-    export function Move_Fast(): void {
+    export function Move_Foward_Fast_100(): void {
         sphero.drive(40, 0)
-        basic.pause(2000)
+        basic.pause(100)
     }
 
     /**
@@ -282,10 +282,10 @@ namespace MTS_RVR {
         Husky_Centre();
         Open_Gripper();
         while(!Sonar_Object_Detected()){
-            Move_Fast();
+            Move_Foward_Fast_100();
         }
         while(!Sonar_Pick_Up()){
-            Move_Slow();
+            Move_Forward_Slow_100();
         }
     }
 
