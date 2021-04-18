@@ -85,7 +85,7 @@ namespace MTS_RVR {
     //% blockGap=8
     //% block
     //% heading.min=0 heading.max=359
-    export function Move_Backward(): void {
+    export function Move_Backward_2000(): void {
         sphero.drive(-40, 0)
         basic.pause(2000)
     }
