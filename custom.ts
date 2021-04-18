@@ -135,11 +135,11 @@ namespace MTS_RVR {
     //% block
     //% group="MTS_Sonar"
     //% blockGap=8
-    export function Sonar_Collison_Detected (): boolean {
+    export function Sonar_Collison_Not_Detected (): boolean {
     if (grove.measureInCentimeters(DigitalPin.P1) < 15) {
-        return true
+        return false
     }
-    return false
+    return true
     }
 
     /**
@@ -148,11 +148,11 @@ namespace MTS_RVR {
     //% block
     //% group="MTS_Sonar"
     //% blockGap=8
-    export function Sonar_Object_Detected (): boolean {
+    export function Sonar_Object_Not_Detected (): boolean {
     if (grove.measureInCentimeters(DigitalPin.P1) < 25) {
-        return true
+        return false
     }
-    return false
+    return true
     }
 
     /**
@@ -284,7 +284,7 @@ namespace MTS_RVR {
     export function Move_To_Object(): void {
         Husky_Centre();
         Open_Gripper();
-        while(!Sonar_Object_Detected()){
+        while(Sonar_Object_Not_Detected()){
             Move_Foward_Fast_100();
         }
         while(!Sonar_Pick_Up()){
