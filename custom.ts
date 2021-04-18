@@ -37,6 +37,19 @@ namespace MTS_RVR {
         sphero.drive(40, 0)
         basic.pause(2000)
     }
+
+    /**
+     * The RVR will move in the heading specified. 
+     */
+    //% group="MTS_Movement_Only"
+    //% blockGap=8
+    //% block
+    //% heading.min=0 heading.max=359
+    export function Move_Backward_2000(): void {
+        sphero.drive(-40, 0)
+        basic.pause(2000)
+    }
+    
     /**
      * The RVR will perform a slow movement. 
      */
@@ -78,17 +91,7 @@ namespace MTS_RVR {
         basic.pause(2000)
     }
 
-    /**
-     * The RVR will move in the heading specified. 
-     */
-    //% group="MTS_Movement"
-    //% blockGap=8
-    //% block
-    //% heading.min=0 heading.max=359
-    export function Move_Backward_2000(): void {
-        sphero.drive(-40, 0)
-        basic.pause(2000)
-    }
+    
 
     /**
      * The RVR will perform a small clockwise rotation. 
