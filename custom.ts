@@ -15,7 +15,28 @@ let degree: number = 0
  * Custom blocks
  */
 //% weight=100 color=#000000 icon=""
-namespace MTS_Sphero_RVR {
+namespace MTS_RVR {
+    /**
+     * The RVR will perform a slow movement. 
+     */
+    //% group="MTS_Movement_Only"
+    //% blockGap=8
+    //% block
+    export function Move_Forward_Slow () {
+        sphero.drive(40, 0)
+        basic.pause(2000)
+    }
+
+    /**
+     * The RVR will perform a fast movement. 
+     */
+    //% group="MTS_Movement_Only"
+    //% blockGap=8
+    //% block
+    export function Move_Forward_Fast(): void {
+        sphero.drive(40, 0)
+        basic.pause(2000)
+    }
     /**
      * The RVR will perform a slow movement. 
      */
