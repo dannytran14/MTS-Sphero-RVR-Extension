@@ -274,6 +274,16 @@ namespace MTS_RVR {
         sphero.resetYaw()
         sphero.drive(40, 180)
     }
+    
+     /**
+     * Set husky lens target to home tag recognition. 
+     */
+    //% group="Simplified Functions"
+    //% blockGap=8
+    //% block
+    export function target_home () {
+    huskylens.initMode(protocolAlgorithm.ALGORITHM_TAG_RECOGNITION)
+    }
 
     /**
      * The RVR will centre its positioning relate to the object, and move towards it. 
