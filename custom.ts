@@ -281,8 +281,8 @@ namespace MTS_RVR {
     //% group="Simplified Functions"
     //% blockGap=8
     //% block
-    export function target_home () {
-    huskylens.initMode(protocolAlgorithm.ALGORITHM_TAG_RECOGNITION)
+    export function target_home (): void {
+        huskylens.initMode(protocolAlgorithm.ALGORITHM_TAG_RECOGNITION)
     }
 
     /**
