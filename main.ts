@@ -1,1 +1,10 @@
-MTS_RVR.Move_Backward_2000()
+basic.forever(function () {
+    MTS_RVR.Move_Arm_Out()
+    basic.pause(2000)
+    MTS_RVR.Open_Gripper()
+    basic.pause(2000)
+    MTS_RVR.Close_Gripper()
+    basic.pause(2000)
+    MTS_RVR.Move_Arm_In()
+    basic.pause(2000)
+})
